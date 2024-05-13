@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo TEST</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/script.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Bingo</h1>
+        <div class="settings-container">
+            <input type="number" id="totalBalls" value="75" min="1" max="100" title="Set the total number of Bingo balls">
+            <button onclick="createGrid()">Generate Grid</button>
+            <button id="nextNumberBtn">Next Number</button>
+            <button class="button-reset" onclick="resetGame()">Reset</button>
+        </div>
+    </div>
+    <div class="number-display"></div>
+    <div class="bingo-grid-container" id="bingoGrid"></div>
+    <div class="footer">
+        &copy; Joe Matthews
+    </div>
+</body>
+</html>
