@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
             createGrid(totalBalls);
         }
         highlightCalledNumbers(numbersCalled);
-        updateDisplay();
     });
 
     fetchNumbers();
@@ -31,7 +30,6 @@ async function fetchNumbers() {
             createGrid(totalBalls);
         }
         highlightCalledNumbers(numbersCalled);
-        updateDisplay();
     } catch (error) {
         console.error('Error fetching numbers:', error);
     }
@@ -62,9 +60,4 @@ function highlightCalledNumbers(calledNumbers) {
             cell.classList.remove('selected');
         }
     });
-}
-
-function updateDisplay() {
-    const display = document.querySelector('.number-display');
-    display.textContent = numbersToBeCalled.length > numbersCalled.length ? `Next Number: ${numbersToBeCalled[numbersCalled.length]}` : 'All numbers called!';
 }

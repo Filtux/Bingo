@@ -60,6 +60,11 @@ exports.getCalledNumbers = (req, res) => {
     res.json(gameState.calledNumbers); // Use res.json
 };
 
+exports.getUpcomingNumbers = (req, res) => {
+    const upcomingNumbers = gameState.numbers.slice(gameState.calledNumbers.length);
+    res.json(upcomingNumbers); // Use res.json
+};
+
 exports.resetGame = (req, res) => {
     gameState.numbers = [];
     gameState.calledNumbers = [];
