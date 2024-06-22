@@ -11,12 +11,12 @@
 <body>
     <div class="header">
         <h1>Bingo Control Panel</h1>
-        <div class="settings-container">
-            <input type="number" id="totalBalls" value="75" min="1" max="100" title="Set the total number of Bingo balls">
-            <button onclick="initializeGame()">Generate Grid</button>
-            <button id="nextNumberBtn">Next Number</button>
-            <button class="button-reset" onclick="resetGame()">Reset</button>
-        </div>
+    </div>
+    <div class="settings-container">
+        <input type="number" id="totalBalls" value="75" min="1" max="105" title="Set the total number of Bingo balls">
+        <button onclick="initializeGame()">Generate Grid</button>
+        <button id="nextNumberBtn">Next Number</button>
+        <button class="button-reset" onclick="resetGame()">Reset</button>
     </div>
     <div class="numbers-container">
         <div>
@@ -31,5 +31,14 @@
     <div class="footer">
         &copy; Joe Matthews
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io();
+
+            socket.on('connect', () => {
+                console.log('Connected to socket.io server');
+            });
+        });
+    </script>
 </body>
 </html>
