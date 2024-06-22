@@ -9,6 +9,7 @@ body {
     box-sizing: border-box;
     background-color: #f0f0f0;
     overflow: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 h1 {
@@ -27,7 +28,7 @@ h1 {
 
 .settings-container {
     display: flex;
-    margin-top: 100px;
+    margin-top: 200px;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
