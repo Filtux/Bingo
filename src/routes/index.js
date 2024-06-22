@@ -6,7 +6,7 @@ router.post('/initialize-game', gameController.initializeGame);
 router.get('/numbers', gameController.getNumbers);
 router.post('/call-number', gameController.callNumber);
 router.get('/called-numbers', gameController.getCalledNumbers);
-router.get('/upcoming-numbers', gameController.getUpcomingNumbers); // New endpoint
+router.get('/upcoming-numbers', gameController.getUpcomingNumbers);
 router.post('/reset-game', gameController.resetGame);
 
 module.exports = router;
