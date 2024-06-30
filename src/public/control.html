@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel</title>
+    <link rel="stylesheet" href="/css/control-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/control.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Bingo Control Panel</h1>
+    </div>
+    <div class="settings-container">
+        <input type="number" id="totalBalls" value="75" min="1" max="105" title="Set the total number of Bingo balls">
+        <button onclick="initializeGame()">Generate Grid</button>
+        <button id="nextNumberBtn">Next Number</button>
+        <button class="button-reset" onclick="resetGame()">Reset</button>
+    </div>
+    <div class="numbers-container">
+        <div>
+            <h2>Upcoming Numbers</h2>
+            <ul id="upcomingNumbers" class="numbers-list"></ul>
+        </div>
+        <div>
+            <h2>Previously Called Numbers</h2>
+            <ul id="calledNumbers" class="numbers-list"></ul>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; Joe Matthews
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const socket = io();
+
+            socket.on('connect', () => {
+                console.log('Connected to socket.io server');
+            });
+        });
+    </script>
+</body>
+</html>
